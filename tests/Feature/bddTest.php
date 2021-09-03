@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class viewTest extends TestCase
+class bddTest extends TestCase
 {
     /**
      * A basic feature test example.
@@ -15,9 +15,6 @@ class viewTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('/test');
-
-        //$response->assertSeeText("Ca marche", $escaped = true);
-        $response->assertSeeText("Ca marche", $escaped = true);
+        $this->assertDatabaseCount('users', 0);
     }
 }
