@@ -17,7 +17,9 @@ class viewTest extends TestCase
     {
         $response = $this->get('/test');
 
+
+        $response->assertStatus(200);
         //$response->assertSeeText("Ca marche", $escaped = true);
-        $response->assertSeeText("Ca marche", $escaped = true);
+        $response->assertSeeText("Ca marche");
     }
 }
